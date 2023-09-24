@@ -35,7 +35,7 @@ function App() {
           element: <Edittable />
         },
         {
-          path: '/profile',
+          path: '/profile/:id',
           element: <Profile />
         },
       ]

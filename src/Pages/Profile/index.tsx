@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Table, Button } from "antd";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Text } from "../../components";
 import { ColumnsType } from "antd/es/table";
 
@@ -15,6 +15,7 @@ interface dataProfile {
 const Profile: React.FC = () => {
     const [dataUser, setDataUser] = useState<dataProfile[]>([]);
     const navigate = useNavigate();
+    const {id} =useParams()
     const accessToken = localStorage.getItem('token');
 
     useEffect(() => {
@@ -34,7 +35,7 @@ const Profile: React.FC = () => {
                     }
                 } else {
                     // Handle error, e.g., redirect to login page
-                    navigate('/login');
+                    navigate('/');
                 }
             } catch (error) {
                 // Handle network or other errors
@@ -46,7 +47,7 @@ const Profile: React.FC = () => {
             fetchData();
         } else {
             // Handle case where accessToken is not available
-            navigate('/login');
+            navigate('/');
         }
     }, [accessToken, navigate]);
 

@@ -29,10 +29,13 @@ const Navbar: React.FC = () => {
 
     },
     {
-      label: 'Profile',
+      label: (
+        <a onClick={()=> navigate('/profile/:id')} target="_blank" rel="noopener noreferrer">
+          Profile
+        </a>
+      ),
       key: 'app',
       icon: <AppstoreOutlined />,
-      disabled: true,
     },
     {
       label: (
