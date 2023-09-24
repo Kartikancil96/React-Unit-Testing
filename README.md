@@ -29,7 +29,7 @@ The model is still under development, and there are some limitations to its capa
 
 Currently, two plugins are available:
 
-- [Link Deploy]() 
+- [Link Deploy](https://react-unit-testing-tau.vercel.app/) 
 - [Localhost](http://localhost:5173/)
 
 
