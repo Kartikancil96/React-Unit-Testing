@@ -1,6 +1,6 @@
 import { renderHook, act} from "@testing-library/react";
 import useCheckLogin from "./UseCheckLogin";
-import { Result } from "antd";
+import result from "antd/es/result";
 
 describe('Hooks useCheckLogin test', () => {
     test('test increment fuction' () =>{
@@ -9,6 +9,6 @@ describe('Hooks useCheckLogin test', () => {
             result.current.increment();
         });
 
-        expect(Result.current.count).toBe(1)
+        expect(result.current.count).toBe(1)
     })
 })
