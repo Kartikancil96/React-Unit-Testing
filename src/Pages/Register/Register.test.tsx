@@ -80,3 +80,4 @@ describe("Register Component", () => {
     expect(localStorage.setItem).toHaveBeenCalledWith("token", "mockToken");
   });
 });
+
