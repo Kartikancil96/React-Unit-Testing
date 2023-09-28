@@ -1,51 +1,54 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react'
-import Addtable from '.'
+import React from "react";
+import { render, fireEvent, waitFor } from "@testing-library/react";
+import Addtable from "."; // Import your component
 
-describe('Add Table Form Test', () => {
-    const mockProps = {
-        onSubmit : jest.fn()
-    }
+describe("Addtable Component", () => {
+  it("renders the component without errors", () => {
+    render(<Addtable />);
+  });
 
-    test('field product name render correctly', async () => {
-        render(<Addtable onSubmit={mockProps.onSubmit}/>)
-        const title = screen.getByText('ID')
-        const form = screen.getByPlaceholderText('Masukan nama produk')
-        expect(title).toBeDefined();
-        expect(form).toBeDefined();
-    })
+  it("submits the form successfully", async () => {
+    // Mock the fetch function
+    const mockFetch = jest.fn(() =>
+      Promise.resolve({
+        json: () => Promise.resolve({ success: true }),
+      })
+    );
+    global.fetch = jest.fn().mockResolvedValue({
+        json: () => Promise.resolve({ data: { token: "mock-token" } }),
+      });
 
-    test('field product price render correctly', async () => {
-        render(<Addtable onSubmit={mockProps.onSubmit}/>)
-        const title = screen.getByText('Harga Produk')
-        const form = screen.getByPlaceholderText('Masukan harga produk')
-        expect(title).toBeDefined();
-        expect(form).toBeDefined();
-    })
+    const { getByText, getByPlaceholderText, getByLabelText } = render(
+      <Addtable />
+    );
 
-    test('button submit render correctly', async () => {
-        render(<Addtable onSubmit={mockProps.onSubmit}/>)
-        const title = screen.getByText('Submit')
-        expect(title).toBeDefined();
-    })
+    // Fill in the form fields
+    fireEvent.change(getByPlaceholderText("Your Name"), {
+      target: { value: "John Doe" },
+    });
+    fireEvent.change(getByLabelText("Select Status"), {
+      target: { value: "true" },
+    });
 
-    test('onSubmit works correctly', async () => {
-        render(<Addtable onSubmit={mockProps.onSubmit} />);
-        const title = screen.getByPlaceholderText('Masukan nama produk') as HTMLInputElement;
-        const price = screen.getByPlaceholderText('Masukan harga produk') as HTMLInputElement;
-        const submitButton = screen.getByText('Submit');
+    // Submit the form
+    fireEvent.click(getByText("Add New"));
 
-        fireEvent.change(title, { target: { value: 'contoh produk' } });
-        fireEvent.change(price, { target: { value: '15000' } });
-
-        fireEvent.click(submitButton);
-
-        await waitFor(() => {
-            expect(mockProps.onSubmit).toHaveBeenCalledTimes(1);
-            expect(mockProps.onSubmit).toHaveBeenCalledWith({
-                title: 'contoh produk',
-                price: '15000',
-            });
-        });
-    })
-
-})
+    // Wait for the form submission to complete
+    await waitFor(() => {
+      expect(mockFetch).toHaveBeenCalledWith(
+        "https://mock-api.arikmpt.com/api/category/create",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer mock-token", // Replace with your mock token
+          },
+          body: JSON.stringify({
+            name: "John Doe",
+            is_active: "true",
+          }),
+        }
+      );
+    });
+  });
+});
