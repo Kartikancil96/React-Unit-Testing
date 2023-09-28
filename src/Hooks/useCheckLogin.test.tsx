@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { useCheckLogin } from '.'; // Adjust the import path as needed
+import useCheckLogin  from './UseCheckLogin'; // Adjust the import path as needed
 
 // Mock the react-router-dom's useNavigate hook
 jest.mock('react-router-dom', () => ({
