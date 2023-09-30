@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import { ColumnsType } from 'antd/es/table';
 import Home from '.';
 
@@ -34,16 +35,21 @@ describe('Test List Data Component', () => {
               matches: false,
               media: query,
               onchange: null,
-              addListener: jest.fn(), // Deprecated
-              removeListener: jest.fn(), // Deprecated
+              addListener: jest.fn(),
+              removeListener: jest.fn(),
               addEventListener: jest.fn(),
               removeEventListener: jest.fn(),
               dispatchEvent: jest.fn(),
             })),
-          });
+        });
     })
+
     test('test header column', () => {
-        render(<Home columns={columns} data={[]}/>)
+        render(
+            <MemoryRouter>
+                <Home {...{ columns, data: [] }} />
+            </MemoryRouter>
+        );
 
         columns.map((column) => {
             if(column.title) {
