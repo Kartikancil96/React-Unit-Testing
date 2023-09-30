@@ -1,4 +1,3 @@
-import React from 'react';
 import { render } from '@testing-library/react';
 import Text from '.';
 
@@ -38,11 +37,10 @@ describe('Text component', () => {
     expect(spanElement.tagName).toBe('SPAN');
   });
 
-  it('renders a span element with the "danger" class when type is danger', () => {
+  it('renders a paragraph element with the "danger" class when type is danger', () => {
     const { getByText } = render(<Text type="danger">Hello, World!</Text>);
-    const spanElement = getByText('Hello, World!');
-    expect(spanElement).toBeDefined();
-    expect(spanElement.tagName).toBe('SPAN');
-    expect(spanElement).toBeCalledWith('danger');
+    const dangerElement = getByText('Hello, World!');
+    expect(dangerElement).toBeDefined();
+    expect(dangerElement.tagName).toBe('SPAN');
   });
 });

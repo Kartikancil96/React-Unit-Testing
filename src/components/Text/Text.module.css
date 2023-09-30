@@ -1,7 +1,10 @@
-.text {
-    color: black;
-}
-
-.danger {
-    color: red;
+body {
+    .text {
+        color: black;
+    }
+    
+    .danger {
+        color: red;
+    }
+    
 }

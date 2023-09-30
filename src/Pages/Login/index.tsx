@@ -40,7 +40,7 @@ const Login: React.FC = () => {
     return (
         <>
             <Card>
-                <h1 className="text-center">Login</h1>
+                <Text type="h1">Login</Text>
                 <Formik initialValues={{
                     email: '',
                     password: '',
@@ -50,7 +50,7 @@ const Login: React.FC = () => {
                 >
                     <Form name="basic" autoComplete="off" justify-content="center">
                         <div>
-                            <Text>Email Address</Text>
+                            <Text type="p">Email Address</Text>
                             <Field
                                 name="email"
                                 type="text"
@@ -61,7 +61,7 @@ const Login: React.FC = () => {
                             <ErrorMessage name="email" className="text-danger" />
                         </div>
                         <div>
-                            <Text>Password</Text>
+                            <Text type="p">Password</Text>
                             <Field
                                 name="password"
                                 type="text"
@@ -76,8 +76,8 @@ const Login: React.FC = () => {
                             <Button type="primary" htmlType="submit">Log in</Button>
                         </div>
                         <div>
-                            <p>Still don't have an account?</p>
-                            <p><Link to="/register"><span style={{ color: '#03658c' }}>Sign Up!</span></Link></p>
+                            <Text type="p">Still don't have an account?</Text>
+                            <Text type="p"><Link to="/register"><Text type="span">Sign Up!</Text></Link></Text>
                         </div>
                     </Form>
                 </Formik>
