@@ -13,12 +13,12 @@ const columns: ColumnsType<DataType> = [
     {
         title: 'id',
         dataIndex: 'id',
-        key: 'id',        
+        key: 'id',
     },
     {
         title: 'Name',
         dataIndex: 'name',
-        key: 'name',        
+        key: 'name',
     },
     {
         title: 'Status',
@@ -32,14 +32,14 @@ describe('Test List Data Component', () => {
         Object.defineProperty(window, 'matchMedia', {
             writable: true,
             value: jest.fn().mockImplementation(query => ({
-              matches: false,
-              media: query,
-              onchange: null,
-              addListener: jest.fn(),
-              removeListener: jest.fn(),
-              addEventListener: jest.fn(),
-              removeEventListener: jest.fn(),
-              dispatchEvent: jest.fn(),
+                matches: false,
+                media: query,
+                onchange: null,
+                addListener: jest.fn(),
+                removeListener: jest.fn(),
+                addEventListener: jest.fn(),
+                removeEventListener: jest.fn(),
+                dispatchEvent: jest.fn(),
             })),
         });
     })
@@ -52,7 +52,7 @@ describe('Test List Data Component', () => {
         );
 
         columns.map((column) => {
-            if(column.title) {
+            if (column.title) {
                 const title = screen.getByText(column.title.toString());
                 expect(title).toBeDefined()
             }
