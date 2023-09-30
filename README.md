@@ -29,7 +29,7 @@ The model is still under development, and there are some limitations to its capa
 
 Currently, two plugins are available:
 
-- [Link Deploy](https://week-13-crud-kartika.vercel.app/) 
+- [Link Deploy](https://main--beamish-kataifi-14cd0c.netlify.app/) 
 - [Localhost](http://localhost:5173/)
 
 
