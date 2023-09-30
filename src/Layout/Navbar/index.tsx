@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
     },
     {
       label: (
-        <a onClick={()=> navigate('/profile/:id')} target="_blank" rel="noopener noreferrer">
+        <a onClick={() => navigate('/profile/:id')} target="_blank" rel="noopener noreferrer">
           Profile
         </a>
       ),
@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
   ];
 
   return <header>
-    <Menu style={{justifyContent:'center'}} onClick={onNavbar} selectedKeys={[current]} mode="horizontal" items={items} />
+    <Menu style={{ justifyContent: 'center' }} onClick={onNavbar} selectedKeys={[current]} mode="horizontal" items={items} />
   </header>;
 };
 
