@@ -26,7 +26,7 @@ Feature:
 
 
 ### Documentation
-[Documentation](../../contoh%20unit%20testing%20Home%20Page.png)
+[Documentation](./src/assets/contoh%20unit%20testing%20Home%20Page.png)
 
 ### Limitations
 
