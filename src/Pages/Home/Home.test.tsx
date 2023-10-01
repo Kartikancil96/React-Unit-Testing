@@ -47,7 +47,7 @@ describe('Test List Data Component', () => {
     test('test header column', () => {
         render(
             <MemoryRouter>
-                <Home {...{ columns, data: [] }} />
+                <Home />
             </MemoryRouter>
         );
 
