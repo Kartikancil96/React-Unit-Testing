@@ -35,7 +35,7 @@ The model is still under development, and there are some limitations to its capa
 
 Currently, two plugins are available:
 
-- [Link Deploy](https://main--beamish-kataifi-14cd0c.netlify.app/) 
+- [Link Deploy](https://react-unit-testing-sage.vercel.app/) 
 - [Localhost](http://localhost:5173/)
 
 
