@@ -2,7 +2,7 @@
 
 
 
-# Build Simple Register Form Vite, React , Formik, Yup,  Typescript 
+# Unit Testing for component   
 
 Simple Registration unit testing, log in and get list data table with React.
 
@@ -13,6 +13,7 @@ Feature:
  - TypeScript
  - Vite
  - Yup
+ - Jest
 
 
 ### How to use
@@ -20,7 +21,12 @@ Feature:
 - git clone or download this repository
 - install with your favorite terminal : npm install / npm i
 - run with npm run dev to views the path localhost
+- run with npm run test to view the unit testing for each component
+- or you can install Extensions Jest Runner for simple click Run to testing each part that you want to test 
 
+
+### Documentation
+[Documentation](../../contoh%20unit%20testing%20Home%20Page.png)
 
 ### Limitations
 
