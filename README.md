@@ -26,7 +26,8 @@ Feature:
 
 
 ### Documentation
-[Documentation](./src/assets/contoh%20unit%20testing%20Home%20Page.png)
+<img width="794" alt="contoh unit testing Home Page" src="https://github.com/RevoU-FSSE-2/week-14-Kartikancil96/assets/86463722/ad3bd710-5052-48ca-8c14-36b61c9cb83a">
+
 
 ### Limitations
 
