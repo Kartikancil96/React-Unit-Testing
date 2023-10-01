@@ -2,7 +2,7 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useNavigate, useParams } from "react-router-dom";
-import { Card } from "../../components";
+import { Card, Text } from "../../components";
 import { Button, Form, Input, Select, Space } from "antd";
 import useCheckLogin from "../../Hooks/UseCheckLogin";
 
@@ -51,7 +51,7 @@ const Edittable: React.FC = () => {
   return (
     <>
       <Card>
-        <h2 className="text-center">Edit Data Form</h2>
+        <Text type="h2">Edit Data Form</Text>
         <Form name="basic" autoComplete="off" justify-content="center" onFinish={formik.handleSubmit}>
           <Form.Item
             name="name"
